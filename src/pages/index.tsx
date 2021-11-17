@@ -3,7 +3,8 @@ function PageLayout({children}) {
 }
 
 export default function Index() {
-  return 'Index';
+  // ReferenceError: PageLayout is not defined
+  return <PageLayout>Index</PageLayout>
 }
 
 export function getStaticProps() {
@@ -14,6 +15,3 @@ export function getStaticProps() {
     props: {}
   };
 }
-
-// ReferenceError: PageLayout is not defined
-Index.getLayout = (page) => <PageLayout>{page}</PageLayout>;
